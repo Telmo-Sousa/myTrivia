@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Defines the document type and version of HTML -->
+<html lang="en">
+<!-- The main root of the HTML document and the language is English -->
+
+<head>
+    <!-- Contains meta information about the document -->
+    <meta charset="UTF-8">
+    <!-- Defines the character set for the document -->
+    <title>Trivia Game</title>
+    <!-- The title of the document -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to the CSS file for styles -->
+
+    <!-- Include RequireJS, a JavaScript file and module loader -->
+    <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+
+    <script>
+        // Configuration for RequireJS
+        require.config({
+            baseUrl: '.', // The base url for all modules
+            paths: {
+                'jquery': 'https://code.jquery.com/jquery-3.6.0.min', // Path for jQuery
+                'services': 'services', // Path for services module
+                'view': 'view', // Path for view module
+                'controller': 'controller' // Path for controller module
+            }
+        });
+
+        // Load the controller module
+        require(['controller']);
+    </script>
+</head>
+
+<body>
+    <!-- Contains the content that will be visible to the user -->
+    <header>
+        <!-- Container for introductory content -->
+        <h1 id="categoryHeader"></h1>
+        <!-- Header for the category -->
+    </header>
+    <div id="questionContainer"></div>
+    <!-- Container for the questions -->
+    <button id="newCategoryBtn">Get more questions</button>
+    <!-- Button to get more questions -->
+    <div id="resultDisplay"></div>
+    <!-- Container to display the results -->
+    <div id="pointsDisplay"></div>
+    <!-- Container to display the points -->
+</body>
+
+</html>
